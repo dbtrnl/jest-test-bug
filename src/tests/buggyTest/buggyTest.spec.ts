@@ -1,6 +1,6 @@
-import { IRepositoryAdapter } from '../adapters/IRepositoryAdapter';
+import { IRepositoryAdapter } from '../../adapters/IRepositoryAdapter';
 import { v4 as uuidv4 } from 'uuid';
-import DynamoRepository from '../integrations/DynamoRepository';
+import DynamoRepository from '../../integrations/DynamoRepository';
 import mockDynamoRepository from './mockDynamoRepository';
 
 type TestType = {
@@ -18,12 +18,12 @@ type TestType = {
 
 jest.mock('aws-sdk', () => mockDynamoRepository<TestType>([]));
 
-describe('Test DynamoRepository', () => {
+describe('Test DynamoRepository (buggy test, SHOULD FAIL)', () => {
   const repo: IRepositoryAdapter = DynamoRepository;
   const tableName = 'test_table';
   const id = uuidv4();
 
-  it('should save data on dynamoDb', async () => {
+  it('should fail', async () => {
     const data: TestType = {
       id,
     };
