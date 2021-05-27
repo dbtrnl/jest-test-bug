@@ -3,7 +3,7 @@ The code for the issue in question is in `/src/tests/`
   * The difference is that the mock was moved to a different file.
 - See comments for further info. Different implementations of jest.mock also do not work.
 
-#### How to run
+## How to run
 
 - Clone this repo, then
 - `$ npm i` and `$ npm test`
@@ -32,3 +32,7 @@ One test should pass, and the other fail.
 ```
 
 Also, `$ npx jest --clearCache` did not solve the problem.
+
+## Changes
+
+- Create branch "babel-jest" to test with babel instead of `ts-jest`. Error persists.
