@@ -10,10 +10,10 @@ export default {
     'lcov',
   ],
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>' }),
-
   preset: 'ts-jest',
   roots: [
     '<rootDir>/src/tests/'
   ],
+  transform: {},
   testEnvironment: 'node',
 };
